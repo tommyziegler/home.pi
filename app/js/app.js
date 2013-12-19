@@ -5,5 +5,6 @@
 angular.module('homePiApp', ['homePiApp.filters', 'homePiApp.services', 'homePiApp.directives']).
   config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/', {templateUrl: 'partials/switches.html', controller: SwitchListCtrl});
+    $routeProvider.when('/contact', {templateUrl: 'partials/contact.html'});
     $routeProvider.otherwise({redirectTo: '/'});
   }]);
