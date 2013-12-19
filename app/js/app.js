@@ -7,15 +7,12 @@ angular.module('homePiApp', ['homePiApp.filters', 'homePiApp.services', 'homePiA
     // Main App
     $routeProvider.when('/', {templateUrl: 'partials/switches.html', controller: SwitchListCtrl});
     
-    // Contact
-    $routeProvider.when('/contact', {templateUrl: 'partials/contact.html'});
+    // About
+    $routeProvider.when('/about', {templateUrl: 'partials/about.html'});
     
     // Configuration
       //$routeProvider.when('/configuration', {templateUrl: 'partials/configuration.html', controller: SwitchListCtrl});
       //$routeProvider.when('/configuration/edit/:id', {templateUrl: 'partials/edit.html', controller: SwitchListCtrl});
-
-    // Contact
-    $routeProvider.when('/contact', {templateUrl: 'partials/contact.html'});
 
     // All others
     $routeProvider.otherwise({redirectTo: '/'});
