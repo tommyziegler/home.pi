@@ -248,6 +248,6 @@ main(process.argv);
 // RedirectServer on port 80
 http.createServer(function(req, res) {
     res.writeHead(200, {'content-type': 'text/html'});
-    var rs = fs.createReadStream('http://whomecontrol:8080/app/index.html');
+    var rs = fs.createReadStream('http://whomecontrol:8081/app/index.html');
     util.pump(rs, res);
 }).listen(80);
