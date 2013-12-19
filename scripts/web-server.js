@@ -6,8 +6,8 @@ var util = require('util'),
     url = require('url'),
     events = require('events');
 
-//var DEFAULT_PORT = 8081;
-var DEFAULT_PORT = 80;
+var DEFAULT_PORT = 8081;
+//var DEFAULT_PORT = 80;
 
 function main(argv) {
   new HttpServer({
@@ -243,3 +243,11 @@ StaticServlet.prototype.writeDirectoryIndex_ = function(req, res, path, files) {
 
 // Must be last,
 main(process.argv);
+
+
+// RedirectServer on port 80
+http.createServer(function(req, res) {
+    res.writeHead(200, {'content-type': 'text/html'});
+    var rs = fs.createReadStream('http://whomecontrol:8080/app/index.html');
+    util.pump(rs, res);
+}).listen(80);
