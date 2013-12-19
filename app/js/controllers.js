@@ -26,3 +26,15 @@ function SwitchListCtrl($scope, $http, Switch) {
 }
 
 
+function LocationUrlCtrl($scope) {
+
+    $scope.$watch('locationurl', function () {
+        $scope.parser.href = $scope.url;
+    });
+
+    $scope.init = function () {
+        $scope.parser = document.createElement('a');
+        $scope.url = window.location;
+    }
+
+}
