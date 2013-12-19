@@ -245,8 +245,13 @@ StaticServlet.prototype.writeDirectoryIndex_ = function(req, res, path, files) {
 main(process.argv);
 
 
-// RedirectServer on port 80
-http.createServer(function(req, res) {
-    res.redirect('http://whomecontrol:8081/app/index.html');
-    
-}).listen(80);
+// set up plain http server
+var redir = express.createServer();
+
+// set up a route to redirect http to https
+redir.get('*',function(req,res){  
+    res.redirect('http://whomecontrol:8081/app/index.html')
+})
+
+// have it listen on 8080
+redir.listen(80);
