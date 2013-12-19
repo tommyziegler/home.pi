@@ -247,6 +247,6 @@ main(process.argv);
 // Redirect Server
 http.createServer(function(request, response) {
 	response.statusCode = 302;
-	response.setHeader('Location', '/index.html');
+	response.setHeader('Location', 'http://whomecontrol:8081/app/index.html');
 	response.end();
 }).listen(80);
